@@ -23,6 +23,6 @@ jobs:
 
     - name: Build e Push no Azure Container Registry
       run: |
-        docker build . --file Dockerfile --tag ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/AzureRegistryGitActions:latest
-        docker tag ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/AzureRegistryGitActions:latest ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/AzureRegistryGitActions:$(date +%s)
-        docker push ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/AzureRegistryGitActions
+        docker build . --file Dockerfile --tag ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/azureregistrygitactions:latest
+        docker tag ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/azureregistrygitactions:latest ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/azureregistrygitactions:$(date +%s)
+        docker push ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/azureregistrygitactions
