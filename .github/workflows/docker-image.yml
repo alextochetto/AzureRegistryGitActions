@@ -22,7 +22,6 @@ jobs:
         login-server: ${{ secrets.DOCKER_CONTAINER_REGISTRY }}
 
     - name: Build e Push no Azure Container Registry
-      uses: Azure/docker-login@v1
       run: |
         docker build . --file Dockerfile --tag ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/AzureRegistryGitActions:latest
         docker tag ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/AzureRegistryGitActions:latest ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/AzureRegistryGitActions:$(date +%s)
